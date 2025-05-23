@@ -1,124 +1,1034 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boorle Naga Vardhan - Software Developer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 font-sans text-gray-800">
-    <!-- Header -->
-    <header class="bg-blue-600 text-white p-6">
-        <div class="container mx-auto text-center">
-            <h1 class="text-3xl font-bold">Boorle Naga Vardhan</h1>
-            <p class="text-lg">Software Developer</p>
-            <div class="mt-4 space-x-4">
-                <a href="https://linkedin.com/in/nagavardhanb" target="_blank" class="hover:underline">LinkedIn</a>
-                <a href="https://github.com/NagzCodz" target="_blank" class="hover:underline">GitHub</a>
-                <a href="https://leetcode.com/u/NagzCodz/" target="_blank" class="hover:underline">LeetCode</a>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naga Vardhan Boorle - Software Developer</title>
+    <meta
+      name="description"
+      content="Enterprise software developer with 2+ years of experience in high-volume transaction systems. Specialized in C#, .NET Core, Java, and database optimization."
+    />
+    <meta
+      name="keywords"
+      content="software developer, backend developer, C#, .NET Core, Java, Spring Boot, SQL Server, enterprise software"
+    />
+    <meta name="author" content="Naga Vardhan Boorle" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Naga Vardhan Boorle - Software Developer"
+    />
+    <meta
+      property="og:description"
+      content="Enterprise software developer specializing in high-volume transaction systems and backend technologies."
+    />
+
+    <style>
+      :root {
+        --primary-color: #2c3e50;
+        --secondary-color: #3498db;
+        --accent-color: #e74c3c;
+        --text-color: #333;
+        --text-light: #6c757d;
+        --bg-color: #ffffff;
+        --bg-alt: #f8f9fa;
+        --border-color: #e9ecef;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+      }
+
+      /* Navigation */
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+
+      .nav-menu {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-link {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--secondary-color);
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: var(--secondary-color);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .mobile-menu span {
+        width: 25px;
+        height: 3px;
+        background: var(--primary-color);
+        margin: 3px 0;
+        transition: 0.3s;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+      }
+
+      .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        opacity: 0;
+        animation: slideInLeft 1s ease forwards;
+      }
+
+      .hero-content .subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+        animation: slideInLeft 1s ease 0.2s forwards;
+      }
+
+      .hero-content p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        opacity: 0.8;
+        animation: slideInLeft 1s ease 0.4s forwards;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        animation: slideInLeft 1s ease 0.6s forwards;
+      }
+
+      .btn {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background: var(--accent-color);
+        color: white;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: slideInRight 1s ease 0.8s forwards;
+      }
+
+      .code-block {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        padding: 2rem;
+        font-family: "Courier New", monospace;
+        color: #64ffda;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        backdrop-filter: blur(5px);
+      }
+
+      /* Sections */
+      .section {
+        padding: 5rem 0;
+      }
+
+      .section:nth-child(even) {
+        background-color: var(--bg-alt);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: var(--primary-color);
+        position: relative;
+      }
+
+      .section-title::after {
+        content: "";
+        width: 60px;
+        height: 4px;
+        background: var(--secondary-color);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .stat-number {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--secondary-color);
+      }
+
+      .stat-label {
+        color: var(--text-light);
+        margin-top: 0.5rem;
+      }
+
+      /* Experience Section */
+      .timeline {
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--secondary-color);
+        transform: translateX(-50%);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .timeline-item:nth-child(odd) .timeline-content {
+        text-align: right;
+        margin-right: 2rem;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content {
+        text-align: left;
+        margin-left: 2rem;
+      }
+
+      .timeline-content {
+        flex: 1;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+      }
+
+      .timeline-date {
+        color: var(--secondary-color);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-company {
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+
+      .timeline-point {
+        position: absolute;
+        left: 50%;
+        top: 2rem;
+        width: 16px;
+        height: 16px;
+        background: var(--secondary-color);
+        border-radius: 50%;
+        transform: translateX(-50%);
+        border: 4px solid white;
+        box-shadow: var(--shadow);
+      }
+
+      /* Skills Section */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-category {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .skill-category:hover {
+        transform: translateY(-5px);
+      }
+
+      .skill-category h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .skill-tag {
+        background: var(--bg-alt);
+        color: var(--text-color);
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-size: 0.9rem;
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+      }
+
+      .skill-tag:hover {
+        background: var(--secondary-color);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Projects Section */
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: all 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-hover);
+      }
+
+      .project-header {
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color),
+          var(--primary-color)
+        );
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .project-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .project-content {
+        padding: 2rem;
+      }
+
+      .project-title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .project-description {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* Contact Section */
+      .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateX(10px);
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: var(--secondary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      .contact-form {
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid var(--border-color);
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: var(--secondary-color);
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 120px;
+      }
+
+      /* Footer */
+      .footer {
+        background: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .social-link {
+        width: 50px;
+        height: 50px;
+        background: var(--secondary-color);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .social-link:hover {
+        background: var(--accent-color);
+        transform: translateY(-3px);
+      }
+
+      /* Animations */
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .fade-in {
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-menu {
+          position: fixed;
+          left: -100%;
+          top: 70px;
+          flex-direction: column;
+          background-color: white;
+          width: 100%;
+          text-align: center;
+          transition: 0.3s;
+          box-shadow: var(--shadow);
+          padding: 2rem 0;
+        }
+
+        .nav-menu.active {
+          left: 0;
+        }
+
+        .mobile-menu {
+          display: flex;
+        }
+
+        .hero-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .timeline::before {
+          left: 20px;
+        }
+
+        .timeline-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .timeline-content {
+          margin-left: 3rem;
+          text-align: left;
+        }
+
+        .timeline-point {
+          left: 20px;
+        }
+
+        .contact-container {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="#home" class="logo">NVB</a>
+        <ul class="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li>
+            <a href="mailto:nagavardhanboorle@gmail.com" class="nav-link"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <div class="mobile-menu">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-    </header>
+      </div>
+    </nav>
 
-    <!-- Main Content -->
-    <main class="container mx-auto p-6">
-        <!-- About -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-            <p>Software Developer with experience in C#, .NET Core, and system modernization at CSG. Passionate about building efficient, scalable solutions.</p>
-            <a href="resume.pdf" download class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download Resume</a>
-        </section>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1>Naga Vardhan Boorle</h1>
+          <p class="subtitle">Enterprise Software Developer</p>
+          <p>
+            Specialized in high-volume transaction systems with 2+ years of
+            experience in backend development, API design, and database
+            optimization.
+          </p>
+          <div class="cta-buttons">
+            <a href="mailto:nagavardhanboorle@gmail.com" class="btn btn-primary"
+              >Get In Touch</a
+            >
+            <a
+              href="resume.pdf"
+              class="btn btn-secondary"
+              onclick="downloadResume()"
+              >Download Resume</a
+            >
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="code-block">
+            <div>// Building scalable systems</div>
+            <div>class Developer {</div>
+            <div>&nbsp;&nbsp;name: "Naga Vardhan"</div>
+            <div>&nbsp;&nbsp;skills: ["C#", "Java", "Python"]</div>
+            <div>&nbsp;&nbsp;experience: "2+ years"</div>
+            <div>&nbsp;&nbsp;passion: "Backend Systems"</div>
+            <div>}</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Experience -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Experience</h2>
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-xl font-medium">SDE - 1, CSG</h3>
-                    <p class="text-gray-600">Dec 2024 - Present | Bangalore, IN</p>
-                    <ul class="list-disc ml-6">
-                        <li>Built C# automation frameworks with SpecFlow, cutting API validation time by 30%.</li>
-                        <li>Integrated database validations, ensuring API data integrity for 10,000+ daily transactions.</li>
-                        <li>Led resolution of production API issues, reducing downtime.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-medium">Software Dev Engr Grad, CSG</h3>
-                    <p class="text-gray-600">Sep 2023 - Dec 2024 | Bangalore, IN</p>
-                    <ul class="list-disc ml-6">
-                        <li>Migrated OLTP systems to C#/.NET Core, boosting performance by 25%.</li>
-                        <li>Built 150+ C# test scripts with SpecFlow, slashing testing cycles by 40%.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-medium">Developer Intern, CSG</h3>
-                    <p class="text-gray-600">Feb 2023 - Sep 2023 | Bangalore, IN</p>
-                    <ul class="list-disc ml-6">
-                        <li>Built ASP.NET Core APIs supporting 10K+ users.</li>
-                        <li>Automated regression tests with Appium, increasing coverage to 55%.</li>
-                    </ul>
-                </div>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="stats">
+            <div class="stat-item">
+              <div class="stat-number">2+</div>
+              <div class="stat-label">Years Experience</div>
             </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Projects</h2>
-            <div class="space-y-4">
-                <div>
-                    <h3 class="text-xl font-medium">System Modernization</h3>
-                    <p>Led 90% completion of C/C++ legacy migration to C#/.NET Core, saving $100K/year.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-medium">Node Server Automation</h3>
-                    <p>Built C# tool to automate server recycling, saving 2 days/workflow.</p>
-                </div>
+            <div class="stat-item">
+              <div class="stat-number">100K+</div>
+              <div class="stat-label">Daily Transactions</div>
             </div>
-        </section>
+            <div class="stat-item">
+              <div class="stat-number">50%</div>
+              <div class="stat-label">Performance Boost</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">150+</div>
+              <div class="stat-label">Test Scripts</div>
+            </div>
+          </div>
+          <div class="about-text">
+            <p>
+              I'm an enterprise software developer with a strong foundation in
+              object-oriented programming, REST APIs, and database optimization.
+              Currently expanding my expertise in Java ecosystem and
+              cloud-native technologies.
+            </p>
 
-        <!-- Skills -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Skills</h2>
-            <ul class="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <li>C#</li>
-                <li>.NET Core</li>
-                <li>REST APIs</li>
-                <li>SQL</li>
-                <li>Git</li>
-                <li>SpecFlow</li>
-                <li>Jenkins</li>
-                <li>Linux</li>
-            </ul>
-        </section>
+            <p>
+              My experience spans across managing systems that process lakhs of
+              daily transactions for major telecommunication clients, leading
+              critical system migrations, and building automation frameworks
+              that significantly improve development efficiency.
+            </p>
 
-        <!-- Education -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Education</h2>
-            <p>Bachelor of Engineering, Computer Science</p>
-            <p class="text-gray-600">M.V.J College of Engineering | 2019 - 2023 | 8.53 CGPA</p>
-        </section>
+            <p>
+              I'm passionate about writing clean, efficient code and building
+              scalable systems that can handle high-volume operations while
+              maintaining optimal performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- Certifications & Awards -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Certifications & Awards</h2>
-            <ul class="list-disc ml-6">
-                <li>Trailblazer Award (2023-24)</li>
-                <li>Building Web APIs with ASP.NET Core 8 (LinkedIn)</li>
-                <li>AWS Cloud Practitioner Essentials (AWS)</li>
-            </ul>
-        </section>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">Dec 2024 - Present</div>
+              <h3 class="timeline-title">Software Development Engineer I</h3>
+              <div class="timeline-company">CSG International, Bangalore</div>
+              <ul>
+                <li>
+                  Manage systems processing lakhs of daily transactions for
+                  major telecommunication clients
+                </li>
+                <li>
+                  Built C# automation frameworks with SpecFlow, reducing API
+                  validation time by 30%
+                </li>
+                <li>
+                  Developed Python scripts for production incidents, saving 2+
+                  days manual effort per incident
+                </li>
+              </ul>
+            </div>
+            <div class="timeline-point"></div>
+          </div>
 
-        <!-- Reach Out to Me -->
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-4">Reach Out to Me</h2>
-            <p>Interested in collaborating or have a question? Feel free to get in touch!</p>
-            <a href="mailto:nagavardhanboorle@gmail.com" class="mt-4 inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Email Me</a>
-        </section>
-    </main>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">Sep 2023 - Dec 2024</div>
+              <h3 class="timeline-title">
+                Software Development Engineer - Graduate
+              </h3>
+              <div class="timeline-company">CSG International, Bangalore</div>
+              <ul>
+                <li>
+                  Led migration of critical OLTP systems from C/C++ to C#/.NET
+                  Core, achieving 40-50% performance improvement
+                </li>
+                <li>
+                  Developed 150+ automated test scripts using SpecFlow, reducing
+                  testing cycles by 40%
+                </li>
+                <li>
+                  Optimized SQL Server and Oracle queries, improving system
+                  response time by 20%
+                </li>
+              </ul>
+            </div>
+            <div class="timeline-point"></div>
+          </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white p-4 text-center">
-        <p>© 2025 Boorle Naga Vardhan | nagavardhanboorle@gmail.com</p>
-    </footer>
-</body>
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <div class="timeline-date">Feb 2023 - Sep 2023</div>
+              <h3 class="timeline-title">Developer Intern</h3>
+              <div class="timeline-company">CSG International, Bangalore</div>
+              <ul>
+                <li>
+                  Built scalable ASP.NET Core APIs supporting 10,000+ concurrent
+                  users
+                </li>
+                <li>
+                  Automated regression testing with Appium, increasing test
+                  coverage from 30% to 55%
+                </li>
+                <li>
+                  Assisted in legacy system modernization, contributing to 40%
+                  reduction in maintenance costs
+                </li>
+              </ul>
+            </div>
+            <div class="timeline-point"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">C/C++</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Frameworks</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">.NET Core</span>
+              <span class="skill-tag">ASP.NET Core</span>
+              <span class="skill-tag">Spring Boot</span>
+              <span class="skill-tag">Entity Framework Core</span>
+              <span class="skill-tag">Flask</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Databases</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">SQL Server</span>
+              <span class="skill-tag">Oracle SQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Tools & DevOps</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">Visual Studio</span>
+              <span class="skill-tag">SpecFlow</span>
+              <span class="skill-tag">Appium</span>
+              <span class="skill-tag">Kibana</span>
+              <span class="skill-tag">Linux</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Design Patterns</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Singleton</span>
+              <span class="skill-tag">Factory</span>
+              <span class="skill-tag">Observer</span>
+              <span class="skill-tag">Strategy</span>
+              <span class="skill-tag">MVC</span>
+              <span class="skill-tag">Repository</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Cloud & Architecture</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag">Docker</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">🔄</div>
+              <h3>Enterprise System Modernization</h3>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Led the migration of critical OLTP systems from C/C++ to C#/.NET
+                Core with SQL Server, achieving significant operational cost
+                savings through improved performance and maintainability.
+              </p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">👥</div>
+              <h3>Employee Management System</h3>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Built a comprehensive Java Spring Boot application with
+                PostgreSQL featuring user management, team associations, and
+                secure data handling with modern authentication systems.
+              </p>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div class="project-icon">⚙️</div>
+              <h3>Server Automation Tool</h3>
+            </div>
+            <div class="project-content">
+              <p class="project-description">
+                Created a C# tool for automated server recycling with JSON
+                output for load balancing, reducing manual workflow time by 2+
+                days and improving system reliability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>
