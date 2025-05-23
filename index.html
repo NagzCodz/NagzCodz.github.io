@@ -1030,5 +1030,25 @@
         </div>
       </div>
     </section>
+    <script>
+      // Get DOM elements
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navMenu = document.getElementById("nav-menu");
+
+      // Toggle menu on hamburger click
+      mobileMenu.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+
+      // Close menu when a nav link is clicked
+      const navLinks = document.querySelectorAll(".nav-link");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+          mobileMenu.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
